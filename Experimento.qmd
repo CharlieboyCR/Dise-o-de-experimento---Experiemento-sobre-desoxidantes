@@ -1,0 +1,59 @@
+---
+title: "Análisis del experimento"
+author: "Carlos Medina Calderón"
+format: html
+editor: visual
+---
+
+## Carga y limpieza de datos
+
+```{r}
+#Guardamos los datos en nuestra variable base
+base <- read.csv("C:\\Users\\carlo\\Documents\\Datos_experimento_tratamientos.csv")
+
+#Consultamos los valores que conforman nuestra dataframe
+str(base)
+
+###Declaramos la variable de que contienen el tipo de presentación como un factor
+
+#Cambiamos el títulos de la columna
+colnames(base)[1] <- "presentacion"
+
+#Declaramos la variable presentacion como factor
+base$presentacion <- factor(base$factor_no_diseño)
+
+#Nombramos los niveles de mi variable presentación
+levels(base$presentacion) <- c("placa", "varilla")
+
+###Declaramos la variable de que contienen el tratamiento como un factor
+
+#Declaramos la variable presentacion como factor
+base$Asignacion <- factor(base$Asignacion)
+
+#Nombramos los niveles de mi variable presentación
+levels(base$Asignacion) <- c("control", "coca", "vinagre", "bicarbonato")
+
+#verificamos
+str(base)
+
+head(base)
+```
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
