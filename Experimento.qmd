@@ -9,7 +9,7 @@ editor: visual
 
 ```{r}
 #Guardamos los datos en nuestra variable base
-base <- read.csv("C:\\Users\\carlo\\Documents\\Datos_experimento_tratamientos.csv")
+base <- read.csv("Datos_experimento_tratamientos.csv")
 
 #Consultamos los valores que conforman nuestra dataframe
 str(base)
